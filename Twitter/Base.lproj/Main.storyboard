@@ -70,14 +70,32 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SlW-vq-Sn6">
-                                            <rect key="frame" x="16" y="32" width="85" height="85"/>
+                                            <rect key="frame" x="9" y="16" width="85" height="85"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omu-Ry-pdj">
+                                            <rect key="frame" x="9" y="109" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="RT"/>
+                                            <connections>
+                                                <action selector="retweetBtn:" destination="r8o-te-PVV" eventType="touchUpInside" id="t7v-jd-w64"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6J0-I2-ptM">
+                                            <rect key="frame" x="64" y="109" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Fav"/>
+                                            <connections>
+                                                <action selector="favoriteBtn:" destination="r8o-te-PVV" eventType="touchUpInside" id="R21-ru-MBR"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favBtn" destination="6J0-I2-ptM" id="u5f-7a-8bZ"/>
                                     <outlet property="nameLabel" destination="1Q0-4P-HfA" id="UZ8-KB-IQI"/>
                                     <outlet property="profilePic" destination="SlW-vq-Sn6" id="V6K-1G-Opa"/>
+                                    <outlet property="rtBtn" destination="Omu-Ry-pdj" id="06e-XE-13q"/>
                                     <outlet property="tweetContentLabel" destination="8GZ-bb-Qea" id="GDi-Dh-A3N"/>
                                 </connections>
                             </tableViewCell>
