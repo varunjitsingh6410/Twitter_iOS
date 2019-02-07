@@ -31,9 +31,32 @@ class TweetCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    var retweeted: Bool = false
+    
+    func setRetweeted(_ isRetweeted:Bool){
+        if(isRetweeted){
+            rtBtn.setTitle("RTed", for: .normal)
+            rtBtn.isEnabled = false
+        }
+        else {
+            rtBtn.setTitle("RT", for: .normal)
+            rtBtn.isEnabled = true
+        }
+    }
+    
+    
     @IBAction func retweetBtn(_ sender: Any) {
         //print("test")
+        TwitterAPICaller.client?.retweet(tweetId: tweetId, success: {
+            self.setRetweeted(true)
+        }, failure: { (error) in
+            print("Error in retweeting")
+        })
     }
+    
+    
+    
     
     var favorited: Bool = false
     var tweetId: Int = -1
